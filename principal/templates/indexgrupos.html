@@ -12,6 +12,8 @@
 						<th>ID Grupo</th>
 						<th>Codigo Grupo</th>
 						<th>ID Grado</th>
+						<th>Editar</th>
+						<th>Borrar</th>
 					</tr>
 					{%for g in grupos%}
 					<tr>
@@ -19,17 +21,17 @@
 							<strong>{{g.idGrupo}}</strong>
 						</td>
 						<td>
-							<small>{{g.codigoGrupo}}</small>
+							<small>{{g.codigo}}</small>
 						</td>
 						<td>
 							<small>{{g.idGrado}}</small>
 						</td>
 						
 						<td>
-							<a href="/editarGrupo">Editar</a>
+							<a href="{% url 'principal.views.editarGrupo' g.idGrupo %}">Editar</a>
 						</td>
 						<td>
-							<a href="/borrarGrado">Borrar</a>
+							<a href="{% url 'principal.views.borrarGrupo' g.idGrupo %}">Borrar</a>
 						</td>
 					</tr>
 					{%endfor%}

@@ -106,7 +106,7 @@ def nuevoGrupo(request):
 
 def editarGrupo(request, id_grupo):
 	grupo = obtenerGrupoPorID(id_grupo)
-	from grupos.forms import GrupoForm
+	from principal.forms import GrupoForm
 	if request.method == "POST":
 		form = GrupoForm(request.POST, instance=grupo)
 		if form.is_valid():

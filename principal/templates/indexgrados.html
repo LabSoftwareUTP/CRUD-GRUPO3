@@ -14,6 +14,8 @@
 						<th>Nombre</th>
 						<th>Activo</th>
 						<th>Fecha de Creación</th>
+						<th>Editar</th>
+						<th>Borrar</th>
 					</tr>
 					{%for g in grados%}
 					<tr>
@@ -33,10 +35,10 @@
 							{{g.fechaCreacion}}
 						</td>
 						<td>
-							<a href="/editarGrado">Editar</a>
+							<a href="{% url 'principal.views.editarGrado' g.idGrado %}">Editar</a>
 						</td>
 						<td>
-							<a href="/borrarGrado">Borrar</a>
+							<a href="{% url 'principal.views.borrarGrado' g.idGrado %}">Borrar</a>
 						</td>
 					</tr>
 					{%endfor%}

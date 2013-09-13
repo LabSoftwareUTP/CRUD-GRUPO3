@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{%block body%}
+	<div class="panel panel-primary">
+		<div class="panel-heading">Listado de grupos</div>
+		<div class="panel-body">
+			{%if not grupos%}
+			<p>No hay grupos</p>
+			{%endif%}
+			<div class="table-responsive">
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th>ID Grupo</th>
+						<th>Codigo Grupo</th>
+						<th>ID Grado</th>
+					</tr>
+					{%for g in grupos%}
+					<tr>
+						<td>
+							<strong>{{g.idGrupo}}</strong>
+						</td>
+						<td>
+							<small>{{g.codigoGrupo}}</small>
+						</td>
+						<td>
+							<small>{{g.idGrado}}</small>
+						</td>
+						
+						<td>
+							<a href="/editarGrupo">Editar</a>
+						</td>
+						<td>
+							<a href="/borrarGrado">Borrar</a>
+						</td>
+					</tr>
+					{%endfor%}
+				</table>
+				<a href="{% url 'nuevogrupo' %}" class="btn btn-success pull-right"><span class="glyphicon .glyphicon-plus"></span> Agregar Grupo</a>
+			</div>
+		</div>
+	</div>
+{%endblock%}

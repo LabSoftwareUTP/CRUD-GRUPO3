@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{%block body%}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Bienvenido a nuestro CRUD!</h1>
+        <p>Qué deseas conocer?</p>
+        <p><a href="{% url 'vergrados_view' %}" class="btn btn-primary btn-lg">Nuestros grados</a></p>
+        <p><a href="{% url 'vergrupos_view' %}" class="btn btn-primary btn-lg">Nuestros grupos</a></p>
+    </div>
+</div>
+{%endblock%}
+

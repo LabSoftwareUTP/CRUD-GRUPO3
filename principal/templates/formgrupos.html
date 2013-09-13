@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block body%}
+<form method="post">
+	{% csrf_token %}
+	<table>
+		{{formulario}}
+		<tr>
+			<td>
+				<input href="{%url 'principal.views.nuevoGrupo'%}" type="submit" class="btn btn-success" value="Crear grupo" >
+			</td>
+		</tr>
+	</table>
+</form>
+{%endblock%}
